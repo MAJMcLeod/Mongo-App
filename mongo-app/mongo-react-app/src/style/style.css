@@ -1,0 +1,360 @@
+:root {
+    --dark-color: #0B0C10;
+    --secondary-dark-color: #1F2833;
+    --tertiary-dark-color: #2d3d4eb7;
+    --light-color: #fff;
+    --primary-color: #66FcF1;
+    --dark-primary-color: #45A29E;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    user-select: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--dark-color);
+    line-height: 1.6;
+    font-family: 'lato', sans-serif;
+    color: #333;
+    overflow: hidden;
+}
+
+/* ListContainer */
+
+.list-container {
+    display: flex;
+    justify-content: space-around;
+    height: 700px;
+    width: 85vw;
+    color: #fff;
+    position: relative;
+    background-image: radial-gradient(#0B0C10 20%, transparent 20%),
+        radial-gradient(#0B0C10 20%, transparent 10%);
+    /* code that makes use of radial gradient to produce a dotted background */
+    background-color: var(--secondary-dark-color);
+    background-position: 0 0, 50px 50px;
+    background-size: 10px 10px;
+}
+
+.list-container-inner {
+    height: 90%;
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.list-container-outer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Nav */
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 3px solid var(--dark-color);
+    background-color: var(--secondary-dark-color);
+    color: #fff;
+}
+
+.nav-inner-2 {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-inner-2 input {
+    height: 20px;
+}
+
+.text {
+    background-color: var(--tertiary-dark-color);
+    height: 20px;
+    padding-right: 8px;
+    font-size: 15px;
+}
+
+.search {
+    border-bottom: 1px solid #ffffff;
+    background-color: var(--tertiary-dark-color);
+    height: 20px;
+    width: 20px;
+}
+
+.search:hover {
+    background-color: #222d3ab7;
+}
+
+.search:active {
+    background-color: #394a5fb7;
+}
+
+input {
+    background-color: var(--tertiary-dark-color);
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    padding: 3px;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* NavBottom */
+
+.nav-bottom {
+    position: absolute;
+    background-color: var(--secondary-dark-color);
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--dark-color);
+    border-top: 3px solid var(--dark-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nav-bottom p {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.nav-bottom-inner:hover {
+    background-color: #161c24;
+}
+
+.nav-bottom-inner:active {
+    background-color: #283341;
+}
+
+/* Item */
+
+.item {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    background-color: var(--tertiary-dark-color);
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    margin: 3px 0;
+}
+
+.item-inner-1 {
+    border-right: solid 1px #fff;
+    border-left: solid 3px #fff;
+    width: 50%;
+    height: 100%;
+    transition: width 0.1s linear;
+}
+
+.item-inner-2 {
+    width: 50%;
+    height: 100%;
+    transition: width 0.1s linear;
+}
+
+.item-inner-3 {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    max-width: 120px;
+    transition: width 0.2s linear, opacity 0.2s linear;
+}
+
+.icon-container {
+    width: 50%;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.item:hover .item-inner-3 {
+    opacity: 100%;
+    border-left: 2px solid #fff;
+    width: 20%;
+}
+
+.item p {
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+/* EditItem */
+
+.edit-input {
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.edit-car {
+    width: 18%;
+    text-overflow: ellipsis;
+}
+
+.edit-owner {
+    width: 55%;
+}
+
+.confirm {
+    color: rgb(0, 177, 38);
+}
+
+.cancel {
+    color: red;
+}
+
+.item-inner-3-update {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 120px;
+    border-left: 2px solid #fff;
+}
+
+.item-inner-2-update {
+    width: 40%;
+    height: 100%;
+
+}
+
+/* Buttons */
+
+.confirm:hover {
+    background-color: rgb(0, 177, 38);
+    transition: background-color 0.1s linear;
+    color: white;
+}
+
+.confirm:active {
+    background-color: rgb(0, 236, 51);
+    transition: background-color 0.00001s linear;
+}
+
+.cancel:hover {
+    background-color: red;
+    transition: background-color 0.1s linear;
+    color: white;
+}
+
+.cancel:active {
+    background-color: rgb(160, 0, 0);
+    transition: background-color 0.00001s linear;
+}
+
+
+.delete:hover {
+    background-color: red;
+    transition: background-color 0.1s linear;
+}
+
+.delete:active {
+    background-color: rgb(160, 0, 0);
+    transition: background-color 0.00001s linear;
+}
+
+.update:hover {
+    background-color: rgb(252, 164, 0);
+    transition: background-color 0.1s linear;
+}
+
+.update:active {
+    background-color: rgb(196, 127, 0);
+    transition: background-color 0.00001s linear;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* used to change properties of the scrollbar */
+
+::-webkit-scrollbar-thumb {
+    background-color: #28282886;
+    border: solid rgba(255, 255, 255, 0.808) 0.5px;
+    border-radius: 20px;
+}
+
+/* ItemControls */
+
+.item-controls {
+    background-color: var(--tertiary-dark-color);
+    height: 90%;
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.controls-inner {
+    width: 90%;
+    height: 95%;
+}
+
+.controls-inner input {
+    width: 80%;
+    margin: 40px 0;
+
+}
+
+.item-controls form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5% ;
+
+}
+
+.item-controls .close{
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.item-controls .close:hover {
+    background-color: red;
+    transition: background-color 0.1s linear;
+}
+
+.item-controls .close:active {
+    background-color: rgb(160, 0, 0);
+    transition: background-color 0.00001s linear;
+}
+
+.btn-add:hover {
+    background-color: rgb(0, 177, 38);
+    transition: background-color 0.1s linear;
+    color: white;
+}
+
+.btn-add:active {
+    background-color: rgb(0, 236, 51);
+    transition: background-color 0.00001s linear;
+}
+
+.item-controls-outer {
+    display: flex;
+    justify-content: space-around;
+}
